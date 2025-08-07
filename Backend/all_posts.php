@@ -1,5 +1,5 @@
 <?php
-require_once '../config/db.php';
+require_once '../config/connection.php';
 // Ensure PDO throws exceptions
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 // Always send JSON header first

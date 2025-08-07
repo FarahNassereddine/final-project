@@ -1,11 +1,12 @@
 <?php
 // delete_post.php
+require_once '../config/connection.php';
 
 // Always return JSON
 header('Content-Type: application/json; charset=utf-8');
 
 // Bootstrap your DB connection
-require_once '../config/db.php';
+require_once '../config/connection.php';
 
 // Throw exceptions on DB errors
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
