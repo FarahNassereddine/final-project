@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'backend_blog';
+$db   = 'backend-blog';
 $user = 'farah';
 $pass = '707788FndAy';
 

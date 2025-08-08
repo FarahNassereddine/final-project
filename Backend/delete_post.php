@@ -3,7 +3,7 @@
 require_once '../config/connection.php';
 
 // Always return JSON
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset= utf8mb4');
 
 // Bootstrap your DB connection
 require_once '../config/connection.php';

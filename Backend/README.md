@@ -48,7 +48,7 @@ http://localhost:8000/api/user_posts.php?user_id=2
 http://localhost:8000/api/update_comment.php?comment_id=5&content=Updated+comment
 ```
 
-
+---
 ### 🔹 5. Delete Post (Post or GET for testing)
 **File:** `api/delete_post.php`  
 **Method:** GET (for simple testing)  

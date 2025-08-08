@@ -26,8 +26,7 @@ try {
     }
 
     // Get latest 15 comments for that post
-    $stmt = $pdo->prepare('
-        SELECT comments.*, users.name AS commenter_name
+    $stmt = $pdo->prepare(' SELECT comments.*, users.name AS commenter_name
         FROM comments
         JOIN users ON comments.user_id = users.id
         WHERE post_id = ?

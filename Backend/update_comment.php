@@ -1,13 +1,16 @@
 <?php
-header('Content-Type: application/json');
+require_once '../config/connection.php';
 
-require_once '../config/db.php';
+// Always return JSON
+header('Content-Type: application/json; charset=utf8mb4');
+
+
+
 
 // Ensure PDO throws exceptions
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Always send JSON header first
-header('Content-Type: application/json');
+
 
 try {
     // Decode incoming JSON
@@ -35,11 +38,11 @@ try {
     }
 
     // Prepare and execute the update
-    $stmt = $pdo->prepare("
-        UPDATE comments
+    $stmt = $pdo->prepare(
+        "UPDATE comments
         SET content = :content
-        WHERE id = :id
-    ");
+        WHERE id = :id"
+    );
     $stmt->execute([
         ':content' => $content,
         ':id'      => $comment_id,

@@ -1,10 +1,10 @@
 <?php
 // Return JSON for all responses
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf8mb4');
 
 try {
     // Database connection
-    $dsn      = 'mysql:host=localhost;dbname=backend_blog_api;charset=utf8';
+    $dsn      = 'mysql:host=localhost;dbname=backend-blog_api;charset=utf8mb4';
     $username = 'farah';
     $password = '707788FndAy';
     $pdo      = new PDO($dsn, $username, $password, [
@@ -25,18 +25,14 @@ try {
     $user_id = (int) $user_id;
 
     // Fetch the 10 most recent posts by this user
-    $sql  = "
-        SELECT 
-            *
-        FROM 
+    $sql  = "SELECT * FROM 
             posts
         WHERE 
             user_id = ?
         ORDER BY 
             id DESC
         LIMIT 
-            10
-    ";
+            10";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$user_id]);
     $posts = $stmt->fetchAll();
